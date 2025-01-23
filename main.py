@@ -17,7 +17,6 @@ pipel = pipeline(
     "text generation",
     tokenizer = tokenizer,
     model = llm_model_name,
-    temperature = 0.7,
     max_new_tokens = 30,
     temperature = 0.6 # cercare che livello di temperature adatto 
     )
