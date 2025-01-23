@@ -1,0 +1,11 @@
+import torch 
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+from langchain_text_splitters import RecursiveCharacterTextSplitter #chunk
+from langchain.prompts import PromptTemplate # prompt 
+
+
+def setup_llm():
+    llm_model_name = "meta-llama/Llama-3.2-3b"  # configurazione modello llama 
+    tokenizer = AutoTokenizer.from_pretrained(llm_model_name) # tokenizer
+    model = AutoModelForCausalLM.from_pretrained(llm_model_name, device_map="auto") # distribuire il modello su GPU o CPU in base alla disponibilità
