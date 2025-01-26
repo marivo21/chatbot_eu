@@ -30,8 +30,8 @@ template = """Question: {question}
 Answer: The follow informations can give a reply to your answer."""
 prompt = PromptTemplate.from_template(template)
 chain = prompt | llm_model_name
-question = "When does baroque begin? 
-Who's the painter of the paint Narcissus?"
+question = """When does baroque begin? 
+Who's the painter of the paint Narcissus?"""
 print(chain.invoke({"question": question}))
 
 # set up FAISS - NON COMPLETO
