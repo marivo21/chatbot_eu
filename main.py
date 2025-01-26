@@ -2,6 +2,8 @@ import torch
 from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer
 from langchain_huggingface import HuggingFacePipeline
 from langchain.prompts import PromptTemplate # prompt 
+import numpy as np # embeddings
+import faiss
 # da qui non sono stati ancora costruiti nel codice
 from langchain_text_splitters import RecursiveCharacterTextSplitter #chunk
 
@@ -22,11 +24,16 @@ pipel = pipeline(
     )
 llm_model_name = HuggingFacePipeline(pipeline=pipel)
 
-# set up prompt - NON COMPLETO
+# set up prompt 
 template = """Question: {question}
 
 Answer: The follow informations can give a reply to your answer."""
 prompt = PromptTemplate.from_template(template)
 chain = prompt | llm_model_name
-question = "..."
+question = "When does baroque begin? 
+Who's the painter of the paint Narcissus?"
 print(chain.invoke({"question": question}))
+
+# set up FAISS - NON COMPLETO
+dimension = embeddings.shape[1] # la dimensione del vettore di embedding
+index = faiss.IndexFlatL2(dimension) # distanza tra i vettori 
