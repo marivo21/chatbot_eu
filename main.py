@@ -42,3 +42,13 @@ embeddings = emb_model.encode(texts) # restituisce una matrice NumPy
 dimension = embeddings.shape[1] # la dimensione del vettore di embedding
 index = faiss.IndexFlatL2(dimension) # distanza tra i vettori 
 index.add(embeddings)
+
+
+# Funzione per il recupero dei documenti più simili
+rec_doc = retrieve_documents(query, k=3)
+query_embedding = np.array(embedding_model.encode([query]))
+distances, indices = index.search(query_embedding, k)
+results = [
+        (doc_ids[idx], data[str(doc_ids[idx])], distances[0][i])
+        for i, idx in enumerate(indices[0])
+    ]
