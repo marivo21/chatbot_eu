@@ -4,6 +4,7 @@ from langchain_huggingface import HuggingFacePipeline
 from langchain.prompts import PromptTemplate # prompt 
 import numpy as np # embeddings
 import faiss
+from sentence_transformers import SentenceTransformer
 # da qui non sono stati ancora costruiti nel codice
 from langchain_text_splitters import RecursiveCharacterTextSplitter #chunk
 
@@ -20,7 +21,7 @@ pipel = pipeline(
     tokenizer = tokenizer,
     model = llm_model_name,
     max_new_tokens = 30,
-    temperature = 0.6 # cercare che livello di temperature adatto 
+    temperature = 0.6  
     )
 llm_model_name = HuggingFacePipeline(pipeline=pipel)
 
@@ -35,5 +36,9 @@ Who's the painter of the paint Narcissus?"""
 print(chain.invoke({"question": question}))
 
 # set up FAISS - NON COMPLETO
+emb_model = SentenceTransformer("all-MiniLM-L6-v2") # embedding con 384 dimensioni
+embeddings = emb_model.encode(texts) # restituisce una matrice NumPy
+
 dimension = embeddings.shape[1] # la dimensione del vettore di embedding
 index = faiss.IndexFlatL2(dimension) # distanza tra i vettori 
+index.add(embeddings)
