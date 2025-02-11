@@ -1,4 +1,4 @@
-# Chatbot con Llama e FAISS  
+# Chatbot con Llama e FAISS 👾 
 
 Questo repository contiene un chatbot basato su **Llama 3** e FAISS per la ricerca di documenti, utilizzando tecnologie di NLP.
 
@@ -19,3 +19,6 @@ Questo repository contiene un chatbot basato su **Llama 3** e FAISS per la ricer
 ```
 
 ## ⚡ Utilizzo
+
+
+## 🚀 Installazione
