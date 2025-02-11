@@ -1,1 +1,11 @@
-
+torch
+transformers
+langchain
+langchain-community
+langchain-huggingface
+faiss-cpu
+sentence-transformers
+numpy
+pprintpp
+sqlite3
+meta-llama==Llama-3.2-3b
