@@ -1,11 +1,10 @@
 torch
 transformers
 langchain
-langchain-community
-langchain-huggingface
-faiss-cpu
+langchain_huggingface
 sentence-transformers
+faiss-cpu
+langchain_redis
+redis
 numpy
-pprintpp
-sqlite3
 meta-llama==Llama-3.2-3b
