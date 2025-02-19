@@ -5,6 +5,7 @@ from langchain.prompts import PromptTemplate # prompt
 import numpy as np # embeddings
 import faiss
 from sentence_transformers import SentenceTransformer
+from langchain_redis import RedisVectorStore
 # da qui non sono stati ancora costruiti nel codice
 from langchain_text_splitters import RecursiveCharacterTextSplitter #chunk
 
@@ -35,7 +36,7 @@ question = """When does baroque begin?
 Who's the painter of the paint Narcissus?"""
 print(chain.invoke({"question": question}))
 
-# set up FAISS - NON COMPLETO
+# set up FAISS 
 emb_model = SentenceTransformer("all-MiniLM-L6-v2") # embedding con 384 dimensioni
 embeddings = emb_model.encode(texts) # restituisce una matrice NumPy
 
@@ -44,11 +45,11 @@ index = faiss.IndexFlatL2(dimension) # distanza tra i vettori
 index.add(embeddings)
 
 
-# Funzione per il recupero dei documenti più simili
-rec_doc = retrieve_documents(query, k=3)
-query_embedding = np.array(embedding_model.encode([query]))
-distances, indices = index.search(query_embedding, k)
-results = [
-        (doc_ids[idx], data[str(doc_ids[idx])], distances[0][i])
-        for i, idx in enumerate(indices[0])
-    ]
+# set up Redis
+vector_store = RedisVectorStore(
+    index_name="Eu-demo",
+    embedding=SentenceTransformer("all-MiniLM-L6-v2"),
+    redis_url="redis://localhost:6379",
+)
+
+redis_client = redis.Redis(host="localhost", port=6379, decode_responses=False)
