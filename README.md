@@ -1,9 +1,9 @@
-# Chatbot con Llama e FAISS 👾 
+# RAG-based Chatbot 👾 
 
-Questo repository contiene un chatbot basato su **Llama 3** e FAISS per la ricerca di documenti, utilizzando tecnologie di NLP.
+Questo progetto implementa un chatbot basato su Retrieval-Augmented Generation (RAG) utilizzando il modello Llama 3, FAISS e Redis. 
 
 ## 📌 Funzionalità
-- **In-memory SQL database**: per gestire e interrogare i dati estratti da **Europeana**.
+- **In-memory REDIS database**: per gestire e interrogare i dati estratti da **Europeana**.
 - **Modello Llama-3.2-3b**
 - **FAISS**
 - **Embeddings**
