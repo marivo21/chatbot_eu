@@ -25,21 +25,21 @@ This project is a Retrieval-Augmented Generation (RAG) chatbot that uses the LLa
 
 Follow these steps to set up the project and run the chatbot locally.
 
-1. Clone the Repository
+1. Clone the Repository:
 First, clone the repository to your local machine:
 
 ```
 git clone https://github.com/marivo21/chatbot_eu
 cd repo-name
 ```
-2. Install Dependencies
+2. Install Dependencies:
 Install all required packages from requirements.txt:
 
 ```
 pip install -r requirements.txt
 ```
 
-3. Set up Redis
+3. Set up Redis:
 Install langchain-redis and running the Redis docker container.
 
 ```
