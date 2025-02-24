@@ -27,18 +27,21 @@ Follow these steps to set up the project and run the chatbot locally.
 
 1. Clone the Repository
 First, clone the repository to your local machine:
-pip install -qU langchain-redis
-docker run -p 6379:6379 redis/redis-stack-server:latest
+
+```
 git clone https://github.com/marivo21/chatbot_eu
 cd repo-name
 ```
 2. Install Dependencies
 Install all required packages from requirements.txt:
+
 ```
 pip install -r requirements.txt
 ```
+
 3. Set up Redis
 Install langchain-redis and running the Redis docker container.
+
 ```
 docker run -p 6379:6379 redis/redis-stack-server:latest
 ```
