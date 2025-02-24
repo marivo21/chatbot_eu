@@ -22,4 +22,13 @@ This project is a Retrieval-Augmented Generation (RAG) chatbot that uses the LLa
 ## ⚡ Utilizzo
 
 
-## 🚀 Installazione
+## 🚀 Installation
+
+Follow these steps to set up the project and run the chatbot locally.
+
+1. Clone the Repository
+First, clone the repository to your local machine:
+```
+git clone https://github.com/your-username/repo-name.git
+cd repo-name
+```
