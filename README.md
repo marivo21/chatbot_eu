@@ -29,6 +29,7 @@ Follow these steps to set up the project and run the chatbot locally.
 1. Clone the Repository
 First, clone the repository to your local machine:
 ```
-git clone https://github.com/your-username/repo-name.git
+git clone https://github.com/marivo21/chatbot_eu
 cd repo-name
 ```
+
