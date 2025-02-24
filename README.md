@@ -4,9 +4,9 @@ This project is a Retrieval-Augmented Generation (RAG) chatbot that uses the LLa
 
 ## 📌Key Features 
 
-➡️Document Retrieval: The chatbot retrieves documents from data sourced via the Europeana API.
-➡️In-Memory Storage: Utilizes an in-memory database built with Redis for fast and efficient data management.
-➡️LangChain Integration: Implements LangChain to build the pipeline (via Hugging Face pipeline), manage prompts, and store vectors using Redis Vector Store.
+➡️1.Document Retrieval: The chatbot retrieves documents from data sourced via the Europeana API.
+➡️2.In-Memory Storage: Utilizes an in-memory database built with Redis for fast and efficient data management.
+➡️3.LangChain Integration: Implements LangChain to build the pipeline (via Hugging Face pipeline), manage prompts, and store vectors using Redis Vector Store.
 
 
 
@@ -19,7 +19,6 @@ This project is a Retrieval-Augmented Generation (RAG) chatbot that uses the LLa
 ├── vector_database.py    # Vector database implementation  
 └── README.md  
 
-## ⚡ Utilizzo
 
 
 ## 🚀 Installation
@@ -28,8 +27,18 @@ Follow these steps to set up the project and run the chatbot locally.
 
 1. Clone the Repository
 First, clone the repository to your local machine:
-```
+pip install -qU langchain-redis
+docker run -p 6379:6379 redis/redis-stack-server:latest
 git clone https://github.com/marivo21/chatbot_eu
 cd repo-name
 ```
-
+2. Install Dependencies
+Install all required packages from requirements.txt:
+```
+pip install -r requirements.txt
+```
+3. Set up Redis
+Install langchain-redis and running the Redis docker container.
+```
+docker run -p 6379:6379 redis/redis-stack-server:latest
+```
