@@ -23,9 +23,9 @@ print(f"Classified as: {top_label}\n")
 
 # documents index
 documents = [
-    {"text": "Caravaggio was born in 1571", "category": "biography"},
-    {"text": "Caravaggio used dramatic lighting in his artworks.", "category": "technique"},
-    {"text": "The painter of Narcissus is Caravaggio.", "category": "art"}
+    {"text": "Caravaggio painted the Supper at Emmaus between 1605 and 1606, that is to say between the end of his stay in Rome and his flight from the city following his conviction for murder.", "category": "biography"},
+    {"text": "The essentiality of the scene, along with the strong contrasts of light and shade, lend more drama to the event in the version now in the Pinacoteca.", "category": "technique"},
+    {"text": "Saint Catherine of Alexandria by Caravaggio is one of the works in the Collection whose complete provenance allows its history to be traced almost from the time it was painted to the present day.", "category": "art"}
 ]
 
 # set up embedding
