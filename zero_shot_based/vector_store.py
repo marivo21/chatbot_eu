@@ -1,5 +1,6 @@
 from langchain_community.vectorstores import Redis
 from redis import Redis
+from sentence_transformers import SentenceTransformer
 
 embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 
