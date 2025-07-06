@@ -3,18 +3,12 @@ from sentence_transformers import SentenceTransformer
 import faiss
 from langchain.prompts import PromptTemplate
 from langchain_community.llms import Ollama 
-from streamlit_tags import st_tags
+
 
 # set up ZERO-SHOT
 user_input = "How did Caravaggio create such dramatic lighting?"
 
-candidate_labels = st_tags(
-            value=["biography", "technique", "art"],
-            maxtags=3,
-            suggestions=["biography", "technique", "art"],
-            label="",
-        )
-
+candidate_labels = candidate_labels = ['biography', 'technique', 'art']
 
 classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
 classification = classifier(user_input, candidate_labels)
