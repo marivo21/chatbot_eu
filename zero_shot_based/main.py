@@ -8,7 +8,7 @@ from langchain_community.llms import Ollama
 # set up ZERO-SHOT
 user_input = "How did Caravaggio create such dramatic lighting?"
 
-candidate_labels = candidate_labels = ['biography', 'technique', 'art']
+candidate_labels = ['biography', 'technique', 'art']
 
 classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
 classification = classifier(user_input, candidate_labels)
